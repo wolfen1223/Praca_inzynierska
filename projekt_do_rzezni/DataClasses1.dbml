@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Rzeznia" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Rzeznia;Integrated Security=True" SettingsObjectName="projekt_do_rzezni.Properties.Settings" SettingsPropertyName="RzezniaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.firma" Member="firmas">
+    <Type Name="firma">
+      <Column Name="id_firmy" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwa_firmy" Storage="_nazwa" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NIP" Type="System.String" DbType="Char(13) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="lokalizacja" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="firma_inwentarz" Member="inwentarzs" ThisKey="id_firmy" OtherKey="dostawca" Type="inwentarz" />
+      <Association Name="lokalizacja_firma" Member="lokalizacja1" ThisKey="lokalizacja" OtherKey="id_lokalizacja" Type="lokalizacja" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.inwentarz" Member="inwentarzs">
+    <Type Name="inwentarz">
+      <Column Name="id_inwentarz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zwierzyna" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dostawca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data_zakupu" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="waga" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
+      <Column Name="kontrola" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="firma_inwentarz" Member="firma" ThisKey="dostawca" OtherKey="id_firmy" Type="firma" IsForeignKey="true" />
+      <Association Name="zwierzyna_inwentarz" Member="zwierzyna1" ThisKey="zwierzyna" OtherKey="id_zwierzyna" Type="zwierzyna" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lokalizacja" Member="lokalizacjas">
+    <Type Name="lokalizacja">
+      <Column Name="id_lokalizacja" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="miasto" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="kraj" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="adres" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="kod_pocztowy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="lokalizacja_firma" Member="firmas" ThisKey="id_lokalizacja" OtherKey="lokalizacja" Type="firma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.partia" Member="partias">
+    <Type Name="partia">
+      <Column Name="id_partii" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="kod" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="partia_partia_zwierzyna" Member="partia_zwierzynas" ThisKey="id_partii" OtherKey="id_partii" Type="partia_zwierzyna" />
+      <Association Name="zamowienie_partia" Member="zamowienie" ThisKey="id_partii" OtherKey="id_zamowienie" Type="zamowienie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.partia_zwierzyna" Member="partia_zwierzynas">
+    <Type Name="partia_zwierzyna">
+      <Column Name="id_partii" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_zwierzyny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="partia_partia_zwierzyna" Member="partia" ThisKey="id_partii" OtherKey="id_partii" Type="partia" IsForeignKey="true" />
+      <Association Name="zwierzyna_partia_zwierzyna" Member="zwierzyna" ThisKey="id_zwierzyny" OtherKey="id_zwierzyna" Type="zwierzyna" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.podzial_tuszy_miesa" Member="podzial_tuszy_miesas">
+    <Type Name="podzial_tuszy_miesa">
+      <Column Name="id_gatunek" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="cena" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="podzial_tuszy_miesa_zwierze_rodzaje_miesa" Member="zwierze_rodzaje_miesas" ThisKey="id_gatunek" OtherKey="id_gatunek" Type="zwierze_rodzaje_miesa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pracownik" Member="pracowniks">
+    <Type Name="pracownik">
+      <Column Name="id_pracownik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imie" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="nazwisko" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="pesel" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+      <Column Name="stanowisko" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data_urodzenia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="lokalizacja" Type="System.String" DbType="VarChar(MAX)" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_przyjecia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="stanowisko_pracownik" Member="stanowisko1" ThisKey="stanowisko" OtherKey="id_stanowisko" Type="stanowisko" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stanowisko" Member="stanowiskos">
+    <Type Name="stanowisko">
+      <Column Name="id_stanowisko" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="pensja" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="stanowisko_pracownik" Member="pracowniks" ThisKey="id_stanowisko" OtherKey="stanowisko" Type="pracownik" />
+    </Type>
+  </Table>
+  <Table Name="dbo.zamowienie" Member="zamowienies">
+    <Type Name="zamowienie">
+      <Column Name="id_zamowienie" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_partia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gatunek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ilosc" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
+      <Column Name="data_zamówienia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="realizacja" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="pracownik" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="firma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="wartość" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="data_realizacji" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="zamowienie_partia" Member="partia" ThisKey="id_zamowienie" OtherKey="id_partii" Type="partia" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.zwierze_gatunek" Member="zwierze_gatuneks">
+    <Type Name="zwierze_gatunek">
+      <Column Name="id_gatunek" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="zwierzyna_zwierze_gatunek" Member="zwierzyna" ThisKey="id_gatunek" OtherKey="id_zwierzyna" Type="zwierzyna" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.zwierze_rodzaje_miesa" Member="zwierze_rodzaje_miesas">
+    <Type Name="zwierze_rodzaje_miesa">
+      <Column Name="id_zwierzyna" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_gatunek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ile_miesa_gatunku" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
+      <Association Name="podzial_tuszy_miesa_zwierze_rodzaje_miesa" Member="podzial_tuszy_miesa" ThisKey="id_gatunek" OtherKey="id_gatunek" Type="podzial_tuszy_miesa" IsForeignKey="true" />
+      <Association Name="zwierzyna_zwierze_rodzaje_miesa" Member="zwierzyna" ThisKey="id_zwierzyna" OtherKey="id_zwierzyna" Type="zwierzyna" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.zwierzyna" Member="zwierzynas">
+    <Type Name="zwierzyna">
+      <Column Name="id_zwierzyna" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_gatunek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cena_za_kg" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="zwierzyna_inwentarz" Member="inwentarzs" ThisKey="id_zwierzyna" OtherKey="zwierzyna" Type="inwentarz" />
+      <Association Name="zwierzyna_partia_zwierzyna" Member="partia_zwierzynas" ThisKey="id_zwierzyna" OtherKey="id_zwierzyny" Type="partia_zwierzyna" />
+      <Association Name="zwierzyna_zwierze_gatunek" Member="zwierze_gatunek" ThisKey="id_zwierzyna" OtherKey="id_gatunek" Type="zwierze_gatunek" Cardinality="One" />
+      <Association Name="zwierzyna_zwierze_rodzaje_miesa" Member="zwierze_rodzaje_miesas" ThisKey="id_zwierzyna" OtherKey="id_zwierzyna" Type="zwierze_rodzaje_miesa" />
+    </Type>
+  </Table>
+</Database>

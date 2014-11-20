@@ -1,0 +1,65 @@
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+c:\users\kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\Kamil\documents\visual studio 2012\Projects\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+C:\Users\Main\Desktop\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+C:\Users\dawid\Documents\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+C:\Users\Wolfen\Downloads\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
