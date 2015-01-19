@@ -20,7 +20,6 @@
       <Column Name="dostawca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="data_zakupu" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="waga" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
-      <Column Name="kontrola" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="firma_inwentarz" Member="firma" ThisKey="dostawca" OtherKey="id_firmy" Type="firma" IsForeignKey="true" />
       <Association Name="zwierzyna_inwentarz" Member="zwierzyna1" ThisKey="zwierzyna" OtherKey="id_zwierzyna" Type="zwierzyna" IsForeignKey="true" />
     </Type>
@@ -85,7 +84,6 @@
   <Table Name="dbo.zamowienie" Member="zamowienies">
     <Type Name="zamowienie">
       <Column Name="id_zamowienie" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_partia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="gatunek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ilosc" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
       <Column Name="data_zamówienia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
@@ -123,6 +121,13 @@
       <Association Name="zwierzyna_partia_zwierzyna" Member="partia_zwierzynas" ThisKey="id_zwierzyna" OtherKey="id_zwierzyny" Type="partia_zwierzyna" />
       <Association Name="zwierzyna_zwierze_gatunek" Member="zwierze_gatunek" ThisKey="id_zwierzyna" OtherKey="id_gatunek" Type="zwierze_gatunek" Cardinality="One" />
       <Association Name="zwierzyna_zwierze_rodzaje_miesa" Member="zwierze_rodzaje_miesas" ThisKey="id_zwierzyna" OtherKey="id_zwierzyna" Type="zwierze_rodzaje_miesa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.magazyn" Member="magazyns">
+    <Type Name="magazyn">
+      <Column Name="id" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_gatunek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ilość" Type="System.Decimal" DbType="decimal(18,0) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

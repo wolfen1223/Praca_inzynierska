@@ -50,6 +50,7 @@ namespace projekt_do_rzezni
 
         private void WczytajDostawy()
         {
+            this.GridViewDos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             var dane = baza.GetTable<inwentarz>().Select(n => new DostawcyRekord
                 {
                     Nazwa_Zwierzyny = n.zwierzyna1.nazwa,
@@ -87,7 +88,7 @@ namespace projekt_do_rzezni
         {
             var dane3 = (from p in baza.pracowniks 
                          join s in baza.stanowiskos
-                         on p.stanowisko equals s.id_stanowisko
+                         on p.stanowisko equals s.id_stanowisko 
                          select new 
                         { 
                             p.imie, 
@@ -99,17 +100,23 @@ namespace projekt_do_rzezni
                             p.data_przyjecia,
                             p.lokalizacja
                         });
+
             GridViewPrac.DataSource = dane3;
         }
 
         private void WczytajMagazyn()
         {
-            var dane4 = (from p in baza.podzial_tuszy_miesas
+            this.GridViewMag.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            var dane4 = (from m in baza.magazyns
+                         join pq in baza.podzial_tuszy_miesas
+                         on m.id_gatunek equals pq.id_gatunek
+                         group m by new { pq.nazwa } into z
                          select new 
-                         { 
-                            p.nazwa,
-                            
+                         {
+                             z.Key.nazwa,
+                             ilosc = z.Sum(_ => _.ilość)
                          });
+            
             GridViewMag.DataSource = dane4;
         }
 
@@ -121,37 +128,47 @@ namespace projekt_do_rzezni
 
         private void btnZamEdytuj_Click(object sender, EventArgs e)
         {
-            zamowienie query = (from x in baza.zamowienies
-                                where x.id_zamowienie == Convert.ToInt32(GridViewZam.CurrentRow.Cells[0].Value)
-                                select x).FirstOrDefault();
+            if (GridViewZam.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Zaznacz cały wiersz", "Bład", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                zamowienie query = (from x in baza.zamowienies
+                                    where x.id_zamowienie == Convert.ToInt32(GridViewZam.CurrentRow.Cells[0].Value)
+                                    select x).FirstOrDefault();
 
-            string gat = (from x in baza.zamowienies
-                         join y in baza.podzial_tuszy_miesas on x.gatunek equals y.id_gatunek
-                         where x.gatunek == query.gatunek
-                         select y.nazwa).FirstOrDefault();
+                string gat = (from x in baza.zamowienies
+                              join y in baza.podzial_tuszy_miesas on x.gatunek equals y.id_gatunek
+                              where x.gatunek == query.gatunek
+                              select y.nazwa).FirstOrDefault();
 
-            string prac = (from x in baza.zamowienies
-                          join y in baza.pracowniks on x.pracownik equals y.id_pracownik
-                          where x.pracownik == query.pracownik
-                          select y.nazwisko).FirstOrDefault();
+                string prac = (from x in baza.zamowienies
+                               join y in baza.pracowniks on x.pracownik equals y.id_pracownik
+                               where x.pracownik == query.pracownik
+                               select y.nazwisko).FirstOrDefault();
 
-            string firm = (from x in baza.zamowienies
-                           join y in baza.firmas on x.firma equals y.id_firmy
-                           where x.firma == query.firma
-                           select y.nazwa_firmy).FirstOrDefault();
+                string firm = (from x in baza.zamowienies
+                               join y in baza.firmas on x.firma equals y.id_firmy
+                               where x.firma == query.firma
+                               select y.nazwa_firmy).FirstOrDefault();
 
 
-            zamowienie z = query;
+                zamowienie z = query;
 
-            DodajZamowienia edycja = new DodajZamowienia(true, query.id_zamowienie);
-            edycja.cbGatunek.Text = gat;
-            edycja.txtIlosc.Text = z.ilosc.ToString();
-            edycja.cbPracownik.Text = prac;
-            edycja.cbFirma.Text = firm;
-            edycja.txtWartosc.Text = z.wartość.ToString();
-            edycja.DateDateTimePickerDZam.Value = z.data_zamówienia.Value;
-            edycja.DateDateTimePickerDRel.Value = z.data_realizacji.Value;
-            edycja.Show();
+                DodajZamowienia edycja = new DodajZamowienia(true, query.id_zamowienie);
+                edycja.cbGatunek.Text = gat;
+                edycja.txtIlosc.Text = z.ilosc.ToString();
+                edycja.cbPracownik.Text = prac;
+                edycja.cbFirma.Text = firm;
+                edycja.txtWartosc.Text = z.wartość.ToString();
+                edycja.DateDateTimePickerDZam.Value = z.data_zamówienia.Value;
+                if (z.data_realizacji != null)
+                {
+                    edycja.DateDateTimePickerDRel.Value = z.data_realizacji.Value;
+                }
+                edycja.Show();
+            }
         }
 
         private void btnZamDodaj_Click(object sender, EventArgs e)
@@ -168,28 +185,34 @@ namespace projekt_do_rzezni
 
         private void btnPracEdytuj_Click(object sender, EventArgs e)
         {
+            if (GridViewPrac.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Zaznacz cały wiersz", "Bład", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                pracownik query = (from x in baza.pracowniks
+                                   where x.pesel == GridViewPrac.CurrentRow.Cells[2].Value.ToString()
+                                   select x).FirstOrDefault();
 
-            pracownik query = (from x in baza.pracowniks
-                               where x.pesel == GridViewPrac.CurrentRow.Cells[2].Value.ToString()
-                               select x).FirstOrDefault();
+                string st = (from x in baza.pracowniks
+                             join y in baza.stanowiskos on x.stanowisko equals y.id_stanowisko
+                             where x.id_pracownik == query.id_pracownik
+                             select y.nazwa).FirstOrDefault();
 
-            string st = (from x in baza.pracowniks
-                      join y in baza.stanowiskos on x.stanowisko equals y.id_stanowisko
-                      where x.id_pracownik == query.id_pracownik
-                      select y.nazwa).FirstOrDefault();
+                pracownik p = query;
 
-            pracownik p = query;
-
-            DodajPracownika edycja = new DodajPracownika(true);
-            edycja.txtImie.Text = p.imie;
-            edycja.txtNazwisko.Text = p.nazwisko;
-            edycja.txtPracPesel.Text = p.pesel;
-            edycja.cbStanowisko.Text = st;
-            edycja.txtLok.Text = p.lokalizacja;
-            edycja.txtTel.Text = p.telefon;
-            edycja.dateTimePickerDatUr.Value = p.data_urodzenia;
-            edycja.dateTimePickerDatPrzy.Value = p.data_przyjecia;
-            edycja.Show();
+                DodajPracownika edycja = new DodajPracownika(true);
+                edycja.txtImie.Text = p.imie;
+                edycja.txtNazwisko.Text = p.nazwisko;
+                edycja.txtPracPesel.Text = p.pesel;
+                edycja.cbStanowisko.Text = st;
+                edycja.txtLok.Text = p.lokalizacja;
+                edycja.txtTel.Text = p.telefon;
+                edycja.dateTimePickerDatUr.Value = p.data_urodzenia;
+                edycja.dateTimePickerDatPrzy.Value = p.data_przyjecia;
+                edycja.Show();
+            }
         }
 
         private void btn_exit1_Click(object sender, EventArgs e)

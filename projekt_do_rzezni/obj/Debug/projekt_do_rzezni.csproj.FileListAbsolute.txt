@@ -63,3 +63,16 @@ C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_
 C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
 C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
 C:\Users\Wolfen\Documents\Visual Studio 2013\Projects\projekt_do_rzezni\projekt_do_rzezni\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajDostawy.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajPracownika.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.DodajZamowienia.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Logowanie.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.OknoGlowne.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.Properties.Resources.resources
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csproj.GenerateResource.Cache
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe.config
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\bin\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.exe
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.pdb
+C:\Users\Wolfen\Documents\GitHub\Praca_inzynierska\projekt_do_rzezni\obj\Debug\projekt_do_rzezni.csprojResolveAssemblyReference.cache

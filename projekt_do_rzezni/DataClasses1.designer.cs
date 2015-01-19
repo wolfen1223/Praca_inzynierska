@@ -60,6 +60,9 @@ namespace projekt_do_rzezni
     partial void Insertzwierzyna(zwierzyna instance);
     partial void Updatezwierzyna(zwierzyna instance);
     partial void Deletezwierzyna(zwierzyna instance);
+    partial void Insertmagazyn(magazyn instance);
+    partial void Updatemagazyn(magazyn instance);
+    partial void Deletemagazyn(magazyn instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -185,6 +188,14 @@ namespace projekt_do_rzezni
 			get
 			{
 				return this.GetTable<zwierzyna>();
+			}
+		}
+		
+		public System.Data.Linq.Table<magazyn> magazyns
+		{
+			get
+			{
+				return this.GetTable<magazyn>();
 			}
 		}
 	}
@@ -480,8 +491,6 @@ namespace projekt_do_rzezni
 		
 		private decimal _waga;
 		
-		private bool _kontrola;
-		
 		private EntityRef<firma> _firma;
 		
 		private EntityRef<zwierzyna> _zwierzyna1;
@@ -500,8 +509,6 @@ namespace projekt_do_rzezni
     partial void Ondata_zakupuChanged();
     partial void OnwagaChanging(decimal value);
     partial void OnwagaChanged();
-    partial void OnkontrolaChanging(bool value);
-    partial void OnkontrolaChanged();
     #endregion
 		
 		public inwentarz()
@@ -615,26 +622,6 @@ namespace projekt_do_rzezni
 					this._waga = value;
 					this.SendPropertyChanged("waga");
 					this.OnwagaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kontrola", DbType="Bit NOT NULL")]
-		public bool kontrola
-		{
-			get
-			{
-				return this._kontrola;
-			}
-			set
-			{
-				if ((this._kontrola != value))
-				{
-					this.OnkontrolaChanging(value);
-					this.SendPropertyChanging();
-					this._kontrola = value;
-					this.SendPropertyChanged("kontrola");
-					this.OnkontrolaChanged();
 				}
 			}
 		}
@@ -1661,8 +1648,6 @@ namespace projekt_do_rzezni
 		
 		private int _id_zamowienie;
 		
-		private int _id_partia;
-		
 		private int _gatunek;
 		
 		private decimal _ilosc;
@@ -1687,8 +1672,6 @@ namespace projekt_do_rzezni
     partial void OnCreated();
     partial void Onid_zamowienieChanging(int value);
     partial void Onid_zamowienieChanged();
-    partial void Onid_partiaChanging(int value);
-    partial void Onid_partiaChanged();
     partial void OngatunekChanging(int value);
     partial void OngatunekChanged();
     partial void OniloscChanging(decimal value);
@@ -1729,26 +1712,6 @@ namespace projekt_do_rzezni
 					this._id_zamowienie = value;
 					this.SendPropertyChanged("id_zamowienie");
 					this.Onid_zamowienieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_partia", DbType="Int NOT NULL")]
-		public int id_partia
-		{
-			get
-			{
-				return this._id_partia;
-			}
-			set
-			{
-				if ((this._id_partia != value))
-				{
-					this.Onid_partiaChanging(value);
-					this.SendPropertyChanging();
-					this._id_partia = value;
-					this.SendPropertyChanged("id_partia");
-					this.Onid_partiaChanged();
 				}
 			}
 		}
@@ -2344,6 +2307,116 @@ namespace projekt_do_rzezni
 		{
 			this.SendPropertyChanging();
 			entity.zwierzyna1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.magazyn")]
+	public partial class magazyn : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_gatunek;
+		
+		private decimal _ilość;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_gatunekChanging(int value);
+    partial void Onid_gatunekChanged();
+    partial void OnilośćChanging(decimal value);
+    partial void OnilośćChanged();
+    #endregion
+		
+		public magazyn()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_gatunek", DbType="Int NOT NULL")]
+		public int id_gatunek
+		{
+			get
+			{
+				return this._id_gatunek;
+			}
+			set
+			{
+				if ((this._id_gatunek != value))
+				{
+					this.Onid_gatunekChanging(value);
+					this.SendPropertyChanging();
+					this._id_gatunek = value;
+					this.SendPropertyChanged("id_gatunek");
+					this.Onid_gatunekChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilość", DbType="decimal(18,0) NOT NULL")]
+		public decimal ilość
+		{
+			get
+			{
+				return this._ilość;
+			}
+			set
+			{
+				if ((this._ilość != value))
+				{
+					this.OnilośćChanging(value);
+					this.SendPropertyChanging();
+					this._ilość = value;
+					this.SendPropertyChanged("ilość");
+					this.OnilośćChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

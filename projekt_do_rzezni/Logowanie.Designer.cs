@@ -40,38 +40,39 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "PESEL";
+            this.label2.Text = "Hasło";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Nazwisko";
+            this.label1.Text = "Login";
             // 
             // txtPesel
             // 
-            this.txtPesel.Location = new System.Drawing.Point(90, 48);
+            this.txtPesel.Location = new System.Drawing.Point(54, 45);
             this.txtPesel.MaxLength = 11;
             this.txtPesel.Name = "txtPesel";
+            this.txtPesel.PasswordChar = '*';
             this.txtPesel.Size = new System.Drawing.Size(100, 20);
             this.txtPesel.TabIndex = 7;
             this.txtPesel.TextChanged += new System.EventHandler(this.txtPesel_TextChanged);
             // 
             // txtNazwisko
             // 
-            this.txtNazwisko.Location = new System.Drawing.Point(90, 22);
+            this.txtNazwisko.Location = new System.Drawing.Point(54, 19);
             this.txtNazwisko.Name = "txtNazwisko";
             this.txtNazwisko.Size = new System.Drawing.Size(100, 20);
             this.txtNazwisko.TabIndex = 6;
             // 
             // btnZaloguj
             // 
-            this.btnZaloguj.Location = new System.Drawing.Point(115, 91);
+            this.btnZaloguj.Location = new System.Drawing.Point(79, 88);
             this.btnZaloguj.Name = "btnZaloguj";
             this.btnZaloguj.Size = new System.Drawing.Size(75, 23);
             this.btnZaloguj.TabIndex = 5;
@@ -83,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(207, 139);
+            this.ClientSize = new System.Drawing.Size(160, 119);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPesel);

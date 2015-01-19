@@ -54,12 +54,43 @@ namespace projekt_do_rzezni
                 data_zakupu = productionDateDateTimePicker.Value,
                 waga = Convert.ToInt32(txtWaga.Text),
             };
+            #region Magazyn
+            int zwierzrodz = (from q in baza.zwierzynas
+                         where q.nazwa == cbZwierzyna.Text.ToString()
+                         select q.id_gatunek).FirstOrDefault();
 
+            var query8 = (from m in baza.zwierze_rodzaje_miesas
+                          where m.id_zwierzyna == zwierzrodz
+                          select new
+                          {
+                              m.id_gatunek,
+                              m.ile_miesa_gatunku
+                          });
+
+            Dictionary<int, decimal> Dic = new Dictionary<int, decimal>();
+
+            foreach (var item in query8)
+            {
+                decimal ile = (item.ile_miesa_gatunku * Convert.ToInt32(txtWaga.Text))/100;
+                Dic.Add(item.id_gatunek, ile);
+            }
+
+            foreach (var item in Dic)
+            {
+                baza.magazyns.InsertOnSubmit(new magazyn
+                    {
+                        id_gatunek = item.Key,
+                        ilość = item.Value
+                    });
+            }
+            #endregion
             baza.inwentarzs.InsertOnSubmit(inw);
             baza.SubmitChanges();
             MessageBox.Show("Dane zostały wprowadzone.");
             this.Close();
         }
+
+
 
         private void btnDodDosAnuluj_Click(object sender, EventArgs e)
         {

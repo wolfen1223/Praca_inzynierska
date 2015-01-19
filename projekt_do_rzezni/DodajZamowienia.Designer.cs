@@ -49,10 +49,9 @@
             // 
             // btnDodZamDodaj
             // 
-            this.btnDodZamDodaj.Location = new System.Drawing.Point(292, 277);
-            this.btnDodZamDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodZamDodaj.Location = new System.Drawing.Point(219, 225);
             this.btnDodZamDodaj.Name = "btnDodZamDodaj";
-            this.btnDodZamDodaj.Size = new System.Drawing.Size(127, 28);
+            this.btnDodZamDodaj.Size = new System.Drawing.Size(95, 23);
             this.btnDodZamDodaj.TabIndex = 20;
             this.btnDodZamDodaj.Text = "Dodaj";
             this.btnDodZamDodaj.UseVisualStyleBackColor = true;
@@ -60,10 +59,9 @@
             // 
             // btnDodZamAnuluj
             // 
-            this.btnDodZamAnuluj.Location = new System.Drawing.Point(13, 277);
-            this.btnDodZamAnuluj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodZamAnuluj.Location = new System.Drawing.Point(10, 225);
             this.btnDodZamAnuluj.Name = "btnDodZamAnuluj";
-            this.btnDodZamAnuluj.Size = new System.Drawing.Size(127, 28);
+            this.btnDodZamAnuluj.Size = new System.Drawing.Size(95, 23);
             this.btnDodZamAnuluj.TabIndex = 19;
             this.btnDodZamAnuluj.Text = "Anuluj";
             this.btnDodZamAnuluj.UseVisualStyleBackColor = true;
@@ -72,150 +70,142 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Gatunek";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(17, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 17);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Ilość";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 99);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(16, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 25;
             this.label5.Text = "Pracownik";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 132);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(16, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 17);
+            this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 26;
             this.label6.Text = "Firma";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 164);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(16, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 27;
             this.label7.Text = "Wartość";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 196);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(16, 159);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 17);
+            this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 28;
             this.label8.Text = "Data zamówienia";
             // 
             // cbGatunek
             // 
+            this.cbGatunek.DisplayMember = "cena";
             this.cbGatunek.FormattingEnabled = true;
-            this.cbGatunek.Location = new System.Drawing.Point(169, 31);
-            this.cbGatunek.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGatunek.Location = new System.Drawing.Point(127, 25);
             this.cbGatunek.Name = "cbGatunek";
-            this.cbGatunek.Size = new System.Drawing.Size(251, 24);
+            this.cbGatunek.Size = new System.Drawing.Size(189, 21);
             this.cbGatunek.TabIndex = 30;
             this.cbGatunek.DropDown += new System.EventHandler(this.cbGatunek_DropDown);
+            this.cbGatunek.ValueMemberChanged += new System.EventHandler(this.cbGatunek_DropDown);
             // 
             // cbPracownik
             // 
             this.cbPracownik.FormattingEnabled = true;
-            this.cbPracownik.Location = new System.Drawing.Point(168, 97);
-            this.cbPracownik.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPracownik.Location = new System.Drawing.Point(126, 79);
             this.cbPracownik.Name = "cbPracownik";
-            this.cbPracownik.Size = new System.Drawing.Size(251, 24);
+            this.cbPracownik.Size = new System.Drawing.Size(189, 21);
             this.cbPracownik.TabIndex = 32;
             this.cbPracownik.DropDown += new System.EventHandler(this.cbPracownik_DropDown);
             // 
             // cbFirma
             // 
             this.cbFirma.FormattingEnabled = true;
-            this.cbFirma.Location = new System.Drawing.Point(168, 130);
-            this.cbFirma.Margin = new System.Windows.Forms.Padding(4);
+            this.cbFirma.Location = new System.Drawing.Point(126, 106);
             this.cbFirma.Name = "cbFirma";
-            this.cbFirma.Size = new System.Drawing.Size(251, 24);
+            this.cbFirma.Size = new System.Drawing.Size(189, 21);
             this.cbFirma.TabIndex = 34;
             this.cbFirma.DropDown += new System.EventHandler(this.cbFirma_DropDown);
             // 
             // DateDateTimePickerDZam
             // 
-            this.DateDateTimePickerDZam.Location = new System.Drawing.Point(168, 196);
-            this.DateDateTimePickerDZam.Margin = new System.Windows.Forms.Padding(4);
+            this.DateDateTimePickerDZam.Location = new System.Drawing.Point(126, 159);
             this.DateDateTimePickerDZam.Name = "DateDateTimePickerDZam";
-            this.DateDateTimePickerDZam.Size = new System.Drawing.Size(252, 22);
+            this.DateDateTimePickerDZam.Size = new System.Drawing.Size(190, 20);
             this.DateDateTimePickerDZam.TabIndex = 36;
             // 
             // txtIlosc
             // 
-            this.txtIlosc.Location = new System.Drawing.Point(169, 64);
-            this.txtIlosc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIlosc.Location = new System.Drawing.Point(127, 52);
             this.txtIlosc.Name = "txtIlosc";
-            this.txtIlosc.Size = new System.Drawing.Size(251, 22);
+            this.txtIlosc.Size = new System.Drawing.Size(189, 20);
             this.txtIlosc.TabIndex = 33;
+            this.txtIlosc.Leave += new System.EventHandler(this.txtIlosc_Leave);
             // 
             // txtWartosc
             // 
-            this.txtWartosc.Location = new System.Drawing.Point(168, 164);
-            this.txtWartosc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWartosc.Enabled = false;
+            this.txtWartosc.Location = new System.Drawing.Point(126, 133);
             this.txtWartosc.Name = "txtWartosc";
-            this.txtWartosc.Size = new System.Drawing.Size(251, 22);
+            this.txtWartosc.Size = new System.Drawing.Size(189, 20);
             this.txtWartosc.TabIndex = 35;
             // 
             // DateDateTimePickerDRel
             // 
-            this.DateDateTimePickerDRel.Location = new System.Drawing.Point(168, 228);
-            this.DateDateTimePickerDRel.Margin = new System.Windows.Forms.Padding(4);
+            this.DateDateTimePickerDRel.Enabled = false;
+            this.DateDateTimePickerDRel.Location = new System.Drawing.Point(126, 185);
             this.DateDateTimePickerDRel.Name = "DateDateTimePickerDRel";
-            this.DateDateTimePickerDRel.Size = new System.Drawing.Size(252, 22);
+            this.DateDateTimePickerDRel.Size = new System.Drawing.Size(190, 20);
             this.DateDateTimePickerDRel.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 228);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(16, 185);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 17);
+            this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 37;
             this.label9.Text = "Data realizacji";
             // 
             // checkBox
             // 
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(126, 229);
+            this.checkBox.Location = new System.Drawing.Point(94, 186);
+            this.checkBox.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(18, 17);
+            this.checkBox.Size = new System.Drawing.Size(15, 14);
             this.checkBox.TabIndex = 41;
             this.checkBox.UseVisualStyleBackColor = true;
             this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // DodajZamowienia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 338);
+            this.ClientSize = new System.Drawing.Size(328, 275);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.DateDateTimePickerDRel);
             this.Controls.Add(this.label9);
@@ -233,7 +223,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDodZamDodaj);
             this.Controls.Add(this.btnDodZamAnuluj);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DodajZamowienia";
             this.Text = "DodajZamowienia";
             this.ResumeLayout(false);

@@ -24,15 +24,12 @@ namespace projekt_do_rzezni
             InitializeComponent();
             this.edycja = edycja;
             this.id = id;
-
-            if (DateDateTimePickerDRel.Value == null)
-            {
-                DateDateTimePickerDRel.Enabled = false;
-            }
-            else
-            {
-                checkBox.Checked = true;
-            }
+            checkBox.Checked = false;
+             DateDateTimePickerDRel.Enabled = false;
+             if (edycja)
+             {
+                 btnDodZamDodaj.Text = "Zapisz zmiany";
+             }
         }
 
         public DodajZamowienia(bool edycja)
@@ -40,11 +37,8 @@ namespace projekt_do_rzezni
             InitializeComponent();
             this.edycja = edycja;
 
-            if (DateDateTimePickerDRel.Value == null)
-            {
-                DateDateTimePickerDRel.Enabled = false;
-                checkBox.Checked = true;
-            }
+            DateDateTimePickerDRel.Enabled = false;
+            checkBox.Checked = false;
         }
 
 
@@ -67,7 +61,6 @@ namespace projekt_do_rzezni
 
         private void btnDodZamDodaj_Click(object sender, EventArgs e)
         {
-
             if (!edycja)
             {
                 int id_gat = (from x in baza.podzial_tuszy_miesas
@@ -82,21 +75,47 @@ namespace projekt_do_rzezni
                            where f.nazwa_firmy == cbFirma.Text.ToString()
                            select f.id_firmy).FirstOrDefault();
 
-                zamowienie zam = new zamowienie
+                
+                if(DateDateTimePickerDRel.Enabled == false)
                 {
-                    id_partia = 1,
-                    id_zamowienie = id + 1,
-                    gatunek = id_gat,
-                    ilosc = Convert.ToInt32(txtIlosc.Text),
-                    data_zamówienia = DateDateTimePickerDZam.Value,
-                    data_realizacji = DateDateTimePickerDZam.Value,
-                    pracownik = prac,
-                    firma = fir,
-                    wartość = Convert.ToInt32(txtWartosc.Text),
-                    realizacja = real
-                };
+                    zamowienie zam = new zamowienie
+                    {
+                        id_zamowienie = id + 1,
+                        gatunek = id_gat,
+                        ilosc = Convert.ToDecimal(txtIlosc.Text),
+                        data_zamówienia = DateTime.Parse(DateDateTimePickerDZam.Value.ToString()),
+                        data_realizacji = null,
+                        pracownik = prac,
+                        firma = fir,
+                        wartość = Convert.ToDecimal(txtWartosc.Text),
+                        realizacja = real
+                    };
+                    baza.zamowienies.InsertOnSubmit(zam);
+                }
+                else
+                {
+                    zamowienie zam = new zamowienie
+                    {
+                        id_zamowienie = id + 1,
+                        gatunek = id_gat,
+                        ilosc = Convert.ToDecimal(txtIlosc.Text),
+                        data_zamówienia = DateDateTimePickerDZam.Value,
+                        data_realizacji = DateDateTimePickerDRel.Value,
+                        pracownik = prac,
+                        firma = fir,
+                        wartość = Convert.ToDecimal(txtWartosc.Text),
+                        realizacja = real
+                    };
+                    baza.zamowienies.InsertOnSubmit(zam);
 
-                baza.zamowienies.InsertOnSubmit(zam);
+                    magazyn mag = new magazyn
+                    {
+                        id_gatunek = id_gat,
+                        ilość = (Convert.ToInt32(txtIlosc.Text) * -1)
+                    };
+                    baza.magazyns.InsertOnSubmit(mag);
+                }
+
                 baza.SubmitChanges();
                 MessageBox.Show("Dane zostały wprowadzone.");
                 this.Close();
@@ -125,11 +144,26 @@ namespace projekt_do_rzezni
                 z.gatunek = idgat;
                 z.ilosc = Convert.ToDecimal(txtIlosc.Text);
                 z.data_zamówienia = DateDateTimePickerDZam.Value;
-                z.data_realizacji = DateDateTimePickerDZam.Value;
+                if (DateDateTimePickerDRel.Enabled == false)
+                {
+                    z.data_realizacji = null;
+                }
+                else
+                {
+                    z.data_realizacji = DateDateTimePickerDRel.Value;
+                }
+                
                 z.pracownik = idprac;
                 z.firma = idfirm;
                 z.wartość = Convert.ToDecimal(txtWartosc.Text);
                 z.realizacja = real;
+
+                magazyn mag = new magazyn
+                {
+                    id_gatunek = idgat,
+                    ilość = (Convert.ToInt32(txtIlosc.Text) * -1)
+                };
+                baza.magazyns.InsertOnSubmit(mag);
 
                 baza.SubmitChanges();
                 MessageBox.Show("Dane zostały edytowane.");
@@ -146,7 +180,7 @@ namespace projekt_do_rzezni
         {
             if (checkBox.Checked)
             {
-                real = "nie";
+                real = "tak";
                 DateDateTimePickerDRel.Enabled = true;
             }
             else
@@ -154,6 +188,15 @@ namespace projekt_do_rzezni
                 real = "nie";
                 DateDateTimePickerDRel.Enabled = false;
             }
+        }
+
+        private void txtIlosc_Leave(object sender, EventArgs e)
+        {
+            var price = (from x in baza.podzial_tuszy_miesas
+                         where x.nazwa == cbGatunek.Text
+                         select x.cena).First();
+            var koszt = price * Convert.ToDecimal(txtIlosc.Text);
+            txtWartosc.Text = koszt.ToString();
         }
     }
 }
